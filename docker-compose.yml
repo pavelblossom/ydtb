@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  sulafpvbot:
+    image: golang:1.15.5-alpine
+    working_dir: /ydtb/
+    volumes:
+      - ./:/ydtb/
+    command: sh -c "CGO_ENABLED=0 go test -v -cover -timeout 30s ./..."
